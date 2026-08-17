@@ -53,7 +53,6 @@ const styles = `
     font-family: 'Outfit', sans-serif;
     font-weight: 400;
     overflow-x: hidden;
-    cursor: none;
   }
   ::selection { background: var(--brown); color: var(--cream); }
 
@@ -62,21 +61,6 @@ const styles = `
     position: fixed; inset: 0; z-index: 2; pointer-events: none;
     opacity: 0.035; mix-blend-mode: multiply;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-  }
-
-  /* CUSTOM CURSOR */
-  .cursor {
-    position: fixed; width: 8px; height: 8px;
-    background: var(--brown); border-radius: 50%;
-    pointer-events: none; z-index: 9999;
-    transition: transform 0.1s ease;
-  }
-  .cursor-ring {
-    position: fixed; width: 32px; height: 32px;
-    border: 1.5px solid var(--rust);
-    border-radius: 50%; pointer-events: none; z-index: 9998;
-    transition: transform 0.3s ease, opacity 0.3s;
-    opacity: 0.5;
   }
 
   /* NAV */
@@ -141,7 +125,7 @@ const styles = `
     padding: 0.85rem 2rem;
     background: var(--brown); color: var(--cream);
     border: 2px solid var(--brown);
-    cursor: none; text-decoration: none; border-radius: 2px;
+    text-decoration: none; border-radius: 2px;
     transition: background 0.25s, border-color 0.25s;
     display: inline-block;
   }
@@ -152,7 +136,7 @@ const styles = `
     padding: 0.85rem 2rem;
     background: transparent; color: var(--rust);
     border: 2px solid var(--rust);
-    cursor: none; text-decoration: none; border-radius: 2px;
+    text-decoration: none; border-radius: 2px;
     transition: all 0.25s; display: inline-block;
   }
   .btn-outline:hover { background: var(--rust-pale); }
@@ -433,8 +417,6 @@ const styles = `
     .nav-links { display: none; }
     .hero-name { font-size: 2.8rem; }
     .photo-accent-2 { display: none; }
-    body { cursor: auto; }
-    .cursor, .cursor-ring { display: none; }
   }
 `;
 
@@ -696,8 +678,6 @@ function FooterVerse() {
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
-  const cursorRef = useRef();
-  const ringRef = useRef();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -705,27 +685,10 @@ export default function App() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    const move = (e) => {
-      if (cursorRef.current) {
-        cursorRef.current.style.left = e.clientX - 4 + "px";
-        cursorRef.current.style.top = e.clientY - 4 + "px";
-      }
-      if (ringRef.current) {
-        ringRef.current.style.left = e.clientX - 16 + "px";
-        ringRef.current.style.top = e.clientY - 16 + "px";
-      }
-    };
-    window.addEventListener("mousemove", move);
-    return () => window.removeEventListener("mousemove", move);
-  }, []);
-
   return (
     <>
       <style>{styles}</style>
       <div className="grain" />
-      <div ref={cursorRef} className="cursor" />
-      <div ref={ringRef} className="cursor-ring" />
 
       {/* NAV */}
       <nav className={scrolled ? "scrolled" : ""}>
