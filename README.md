@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Deborah Abayie — Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Personal portfolio site for Deborah Abayie, a Computer Science student at Wesleyan University (class of 2028). Built to showcase her experience, projects, and skills for software engineering internship applications.
 
-## Available Scripts
+**Live site:** [deborahabayie.com](https://deborahabayie.com)
 
-In the project directory, you can run:
+## About This Project
 
-### `npm start`
+A single-page React site with a warm cream/beige/brown/black design system, an animated connecting-dots canvas in the hero, and scroll-triggered fade-in sections. Sections include About, Technical Skills, Experience, Projects, and Contact.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A small standout: the footer pulls a random King James Version Bible verse from [bible-api.com](https://bible-api.com) on every page load.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Built With
 
-### `npm test`
+- [React](https://react.dev/) (via [Create React App](https://github.com/facebook/create-react-app))
+- Plain CSS (styled via a single injected stylesheet — no external UI library)
+- Canvas API for the animated particle background
+- [bible-api.com](https://bible-api.com) for the footer's rotating verse
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Node.js](https://nodejs.org/) and npm
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/A6ayie/my-portfolio.git
+cd my-portfolio
+npm install
+```
 
-### `npm run eject`
+### Running Locally
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+or
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run dev
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Opens the app at [http://localhost:3000](http://localhost:3000). The page reloads automatically as you edit `src/App.js`.
 
-## Learn More
+### Building for Production
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Outputs an optimized production build to the `build/` folder.
 
-### Code Splitting
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Hosted on [Vercel](https://vercel.com/), connected to this repository's `main` branch. Every push to `main` triggers an automatic build and deployment.
 
-### Analyzing the Bundle Size
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Email: [dabayie@wesleyan.edu](mailto:dabayie@wesleyan.edu)
+- LinkedIn: [linkedin.com/in/deborah-abayie1](https://linkedin.com/in/deborah-abayie1)
+- GitHub: [github.com/A6ayie](https://github.com/A6ayie)
